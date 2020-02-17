@@ -1,0 +1,2 @@
+export const getIsDualNumber = (value): boolean => Number(value) >= 0 && (getIsFloat(value) || Number.isInteger(value));
+export const getIsFloat = (value): boolean => value !== undefined && Number(value) % 1 !== 0;

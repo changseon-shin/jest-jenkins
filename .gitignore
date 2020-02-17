@@ -1,0 +1,12 @@
+node_modules/
+.idea/
+.next/
+.out/
+package-lock.json
+coverage
+.docker/version.zip
+.docker/dist/
+.docker/Dockerrun.aws.json
+storybook-static/
+dist/
+*.iml
