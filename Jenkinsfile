@@ -23,18 +23,20 @@ pipeline {
             allowMissing         : false,
             alwaysLinkToLastBuild: false,
             keepAll             : true,
+            includes: '**/*, **/*.css',
             reportDir            : 'coverage/lcov-report',
             reportFiles          : 'index.html',
             reportName           : 'Test Report'
           ]
-            publishHTML target: [
-              allowMissing         : false,
-              alwaysLinkToLastBuild: false,
-              keepAll             : true,
-              reportDir            : 'coverage',
-              reportFiles          : 'test-report.html',
-              reportName           : 'Test Info'
-            ]
+          publishHTML target: [
+            allowMissing         : false,
+            alwaysLinkToLastBuild: false,
+            keepAll             : true,
+            includes: '**/*, **/*.css',
+            reportDir            : 'coverage',
+            reportFiles          : 'test-report.html',
+            reportName           : 'Test Info'
+          ]
         }
       }
     }
