@@ -4,9 +4,30 @@ pipeline {
   tools {nodejs "node"}
 
   stages {
-    stage('Example') {
+    stage('Startup') {
       steps {
-        sh 'npm config ls'
+        script {
+          sh 'npm install'
+        }
+      }
+    }
+    stage('Test') {
+      steps {
+        script {
+          sh 'npm run test'
+        }
+      }
+      post {
+        always {
+          publishHTML target: [
+            allowMissing         : false,
+            alwaysLinkToLastBuild: false,
+            keepAll             : true,
+            reportDir            : 'output/coverage/jest',
+            reportFiles          : 'index.html',
+            reportName           : 'Test Report'
+          ]
+        }
       }
     }
   }
