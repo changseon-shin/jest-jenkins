@@ -10,7 +10,7 @@ describe('Pages', () => {
     describe('Index', () => {
         it('should render without throwing an error', function () {
             const wrap = mount(<IndexPage/>);
-            expect(wrap.find('div').text()).toBe('Hello World!');
+            expect(wrap.find('div').text()).toBe('Hello World');
         })
     })
 });
