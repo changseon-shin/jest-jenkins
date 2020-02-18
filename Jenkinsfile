@@ -4,13 +4,6 @@ pipeline {
   tools {nodejs "node"}
 
   stages {
-    stage('Startup') {
-      steps {
-        script {
-          sh 'npm install'
-        }
-      }
-    }
     stage('Test') {
       steps {
         script {
@@ -20,8 +13,8 @@ pipeline {
       post {
         always {
           publishHTML target: [
-            allowMissing         : true,
-            alwaysLinkToLastBuild: true,
+            allowMissing         : false,
+            alwaysLinkToLastBuild: false,
             keepAll             : true,
             includes: '**/*',
             reportDir            : 'coverage/lcov-report',
@@ -29,8 +22,8 @@ pipeline {
             reportName           : 'Test Report'
           ]
           publishHTML target: [
-            allowMissing         : true,
-            alwaysLinkToLastBuild: true,
+            allowMissing         : false,
+            alwaysLinkToLastBuild: false,
             keepAll             : true,
             includes: '**/*',
             reportDir            : 'coverage',
