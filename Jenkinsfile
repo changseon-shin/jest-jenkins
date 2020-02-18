@@ -19,7 +19,7 @@ pipeline {
             includes: '**/*',
             reportDir            : 'coverage/lcov-report',
             reportFiles          : 'index.html',
-            reportName           : 'Coverage Report'
+            reportName           : 'coverage-report'
           ]
           publishHTML target: [
             allowMissing         : false,
@@ -27,7 +27,8 @@ pipeline {
             keepAll             : true,
             includes: '**/*',
             reportDir            : 'coverage',
-            reportName           : 'Test Info'
+            reportFiles          : 'test-report.html',
+            reportName           : 'test-report'
           ]
         }
       }
