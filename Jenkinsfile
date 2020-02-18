@@ -1,33 +1,12 @@
-#!/bin/groovy
 pipeline {
-  tools {
-    nodejs 'default-nodejs'
-  }
+  agent any
+
+  tools {nodejs "node"}
+
   stages {
-    stage('Startup') {
+    stage('Example') {
       steps {
-        script {
-          sh 'npm install'
-        }
-      }
-    }
-    stage('Test') {
-      steps {
-        script {
-          sh 'npm run test'
-        }
-      }
-      post {
-        always {
-          publishHTML target: [
-            allowMissing         : false,
-            alwaysLinkToLastBuild: false,
-            keepAll             : true,
-            reportDir            : 'output/coverage/jest',
-            reportFiles          : 'index.html',
-            reportName           : 'Test Report'
-          ]
-        }
+        sh 'npm config ls'
       }
     }
   }
