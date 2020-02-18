@@ -24,23 +24,25 @@ module.exports = {
     ],
     setupFilesAfterEnv: ["<rootDir>/enzyme.js"],
     coverageReporters: [
-        "json",
-        "lcov",
         "text",
-        "text-summary"
+        "html"
+        // "json",
+        // "lcov",
+        // "text",
+        // "text-summary"
     ],
     reporters: [
         "default",
-        ["./node_modules/jest-html-reporter", {
-            "outputPath": "./coverage/test-report.html",
-            "pageTitle": "Test Report",
-            "includeFailureMsg": true,
-            "includeConsoleLog": true,
-            "theme": "lightTheme",
-            "sort": "status"
-        }]
+        // ["./node_modules/jest-html-reporter", {
+        //     "outputPath": "./coverage/test-report.html",
+        //     "pageTitle": "Test Report",
+        //     "includeFailureMsg": true,
+        //     "includeConsoleLog": true,
+        //     "theme": "lightTheme",
+        //     "sort": "status"
+        // }]
     ],
-    testResultsProcessor: "./node_modules/jest-html-reporter",
+    // testResultsProcessor: "./node_modules/jest-html-reporter",
     moduleNameMapper: {
         "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/mocks.js",
         "\\.(css|less|scss)$": "identity-obj-proxy"
