@@ -27,8 +27,6 @@ pipeline {
             reportFiles          : 'index.html',
             reportName           : 'Test Report'
           ]
-        }
-            always {
             publishHTML target: [
               allowMissing         : false,
               alwaysLinkToLastBuild: false,
@@ -37,7 +35,7 @@ pipeline {
               reportFiles          : 'test-report.html',
               reportName           : 'Test Info'
             ]
-            }
+        }
       }
     }
   }
