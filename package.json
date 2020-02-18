@@ -15,7 +15,7 @@
     "production": "pm2-runtime start ecosystem.config.js --env production",
     "storybook": "start-storybook -p 6006 -c .storybook",
     "build-storybook": "build-storybook -c .storybook -o .out",
-    "test": "jest --coverage --coverageDirectory=output/coverage/jest",
+    "test": "jest --verbose --coverage",
     "test:info": "open coverage/lcov-report/index.html",
     "test:report": "open coverage/test-report.html",
     "deploy-storybook": "npm run build-storybook && node storybook.js",

@@ -23,12 +23,24 @@ pipeline {
             allowMissing         : false,
             alwaysLinkToLastBuild: false,
             keepAll             : true,
-            reportDir            : 'output/coverage/jest',
+            reportDir            : 'coverage/lcov-report',
             reportFiles          : 'index.html',
             reportName           : 'Test Report'
           ]
         }
       }
+      post {
+          always {
+            publishHTML target: [
+              allowMissing         : false,
+              alwaysLinkToLastBuild: false,
+              keepAll             : true,
+              reportDir            : 'coverage',
+              reportFiles          : 'test-report.html',
+              reportName           : 'Test Info'
+            ]
+          }
+        }
     }
   }
 }
