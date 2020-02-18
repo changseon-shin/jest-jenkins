@@ -22,7 +22,7 @@ pipeline {
           publishHTML target: [
             allowMissing         : false,
             alwaysLinkToLastBuild: false,
-            keepAll             : true,
+            keepAll             : false,
             reportDir            : 'coverage/lcov-report',
             reportFiles          : 'index.html',
             reportName           : 'Test Report'
@@ -30,7 +30,7 @@ pipeline {
             publishHTML target: [
               allowMissing         : false,
               alwaysLinkToLastBuild: false,
-              keepAll             : true,
+              keepAll             : false,
               reportDir            : 'coverage',
               reportFiles          : 'test-report.html',
               reportName           : 'Test Info'
