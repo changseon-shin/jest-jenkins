@@ -20,19 +20,19 @@ pipeline {
       post {
         always {
           publishHTML target: [
-            allowMissing         : false,
-            alwaysLinkToLastBuild: false,
+            allowMissing         : true,
+            alwaysLinkToLastBuild: true,
             keepAll             : true,
-            includes: '**/*, **/*.css',
+            includes: '**/*',
             reportDir            : 'coverage/lcov-report',
             reportFiles          : 'index.html',
             reportName           : 'Test Report'
           ]
           publishHTML target: [
-            allowMissing         : false,
-            alwaysLinkToLastBuild: false,
+            allowMissing         : true,
+            alwaysLinkToLastBuild: true,
             keepAll             : true,
-            includes: '**/*, **/*.css',
+            includes: '**/*',
             reportDir            : 'coverage',
             reportFiles          : 'test-report.html',
             reportName           : 'Test Info'
